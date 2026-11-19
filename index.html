@@ -17,40 +17,43 @@ html {
 }
 
 body {
-  background: #180507;
+  background-color: #180507;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(30,0,5,.48),
+      rgba(20,0,3,.78)
+    ),
+    url("./background.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
   color: white;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
 }
 
-/* BACKGROUND */
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(30,0,5,.48),
-      rgba(20,0,3,.78)
-    ),
-    url("background.jpeg") center center / cover no-repeat;
-}
+/* BACKGROUND OVERLAY */
 
 body::after {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   background: radial-gradient(
     ellipse at center,
     transparent 15%,
     rgba(50,0,8,.35) 100%
   );
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* HEADER */
@@ -245,6 +248,9 @@ footer {
 /* MOBILE */
 
 @media (max-width: 650px) {
+  body {
+    background-attachment: scroll;
+  }
 
   .hero {
     padding: 75px 18px 45px;
@@ -270,7 +276,6 @@ footer {
     padding-top: 40px;
   }
 }
-
 </style>
 </head>
 
