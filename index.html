@@ -24,14 +24,20 @@ body {
   min-height: 100vh;
 }
 
+/* BACKGROUND */
+
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
   background:
-    linear-gradient(180deg, rgba(30,0,5,.48), rgba(20,0,3,.78)),
-    url("background.jpg") center center / cover no-repeat;
+    linear-gradient(
+      180deg,
+      rgba(30,0,5,.48),
+      rgba(20,0,3,.78)
+    ),
+    url("background.jpeg") center center / cover no-repeat;
 }
 
 body::after {
@@ -176,8 +182,13 @@ header {
 }
 
 @keyframes moveGallery {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* FEATURES */
@@ -234,6 +245,7 @@ footer {
 /* MOBILE */
 
 @media (max-width: 650px) {
+
   .hero {
     padding: 75px 18px 45px;
     min-height: 370px;
@@ -258,6 +270,7 @@ footer {
     padding-top: 40px;
   }
 }
+
 </style>
 </head>
 
@@ -285,23 +298,58 @@ footer {
 
   <div class="track">
 
-    <div class="art-card"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=700" alt="Artwork"></div>
-    <div class="art-card"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700" alt="Artwork"></div>
-    <div class="art-card"><img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=700" alt="Artwork"></div>
-    <div class="art-card"><img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=700" alt="Artwork"></div>
-    <div class="art-card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700" alt="Artwork"></div>
-    <div class="art-card"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700" alt="Artwork"></div>
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=700" alt="Artwork">
+    </div>
 
-    <!-- LOOP -->
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700" alt="Artwork">
+    </div>
 
-    <div class="art-card"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=700" alt="Artwork"></div>
-    <div class="art-card"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700" alt="Artwork"></div>
-    <div class="art-card"><img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=700" alt="Artwork"></div>
-    <div class="art-card"><img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=700" alt="Artwork"></div>
-    <div class="art-card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700" alt="Artwork"></div>
-    <div class="art-card"><img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700" alt="Artwork"></div>
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700" alt="Artwork">
+    </div>
+
+    <!-- DUPLICATED IMAGES FOR INFINITE ANIMATION -->
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700" alt="Artwork">
+    </div>
 
   </div>
+
 </section>
 
 <section class="features">
