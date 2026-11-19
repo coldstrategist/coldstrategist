@@ -1,1 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Creative Portfolio</title>
 
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #050505;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  padding: 28px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.header-label {
+  color: #777;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 85px 20px 35px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 76px);
+  line-height: 1.12;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  color: #a7ff65;
+}
+
+.hero p {
+  color: #888;
+  margin-top: 22px;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.hero-button {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 15px 30px;
+  border: 1px solid #383838;
+  border-radius: 40px;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  transition: .3s;
+}
+
+.hero-button:hover {
+  border-color: #a7ff65;
+  box-shadow: 0 0 25px #a7ff6540;
+}
+
+/* GALLERY */
+.gallery {
+  width: 100%;
+  overflow: hidden;
+  padding: 45px 0 55px;
+  perspective: 1000px;
+  position: relative;
+}
+
+.gallery::before {
+  content: "";
+  position: absolute;
+  width: 55%;
+  height: 180px;
+  background: #a7ff65;
+  filter: blur(130px);
+  opacity: .16;
+  left: 22%;
+  top: 35%;
+  pointer-events: none;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  gap: 18px;
+  animation: moveGallery 32s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.gallery:hover .track {
+  animation-play-state: paused;
+}
+
+.art-card {
+  width: 230px;
+  height: 290px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 1px solid #292929;
+  transform: rotateY(-9deg);
+  transition: .5s;
+  position: relative;
+  background: #171717;
+}
+
+.art-card:nth-child(even) {
+  transform: rotateY(9deg) translateY(15px);
+}
+
+.art-card:hover {
+  transform: scale(1.07) rotateY(0);
+  border-color: #a7ff65;
+  z-index: 2;
+}
+
+.art-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(.8);
+  transition: .5s;
+}
+
+.art-card:hover img {
+  filter: brightness(1);
+  transform: scale(1.08);
+}
+
+@keyframes moveGallery {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* FEATURES */
+.features {
+  max-width: 1100px;
+  margin: 25px auto 90px;
+  padding: 0 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  text-align: center;
+}
+
+.feature h3 {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 13px;
+}
+
+.feature p {
+  color: #777;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.number {
+  color: #a7ff65;
+  font-size: 12px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid #202020;
+  padding: 25px;
+  text-align: center;
+  color: #666;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 650px) {
+  header {
+    padding: 22px 5%;
+  }
+
+  .hero {
+    padding-top: 65px;
+  }
+
+  .art-card {
+    width: 175px;
+    height: 225px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-top: 15px;
+  }
+
+  .gallery {
+    padding-top: 30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">YOUR NAME.</div>
+  <div class="header-label">PERSONAL PORTFOLIO</div>
+</header>
+
+<section class="hero">
+  <h1>
+    Creativity Beyond<br>
+    <span>Limits.</span>
+  </h1>
+
+  <p>
+    A space for ideas, creativity and visual experiments.<br>
+    Welcome to my world.
+  </p>
+
+  <a href="#gallery" class="hero-button">
+    EXPLORE MY WORK &nbsp; →
+  </a>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="track">
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700" alt="Artwork">
+    </div>
+
+    <!-- DUPLICATED IMAGES FOR INFINITE ANIMATION -->
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700" alt="Artwork">
+    </div>
+
+    <div class="art-card">
+      <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700" alt="Artwork">
+    </div>
+
+  </div>
+</section>
+
+<section class="features">
+  <div class="feature">
+    <span class="number">01</span>
+    <h3>Creative Vision</h3>
+    <p>A collection of ideas transformed into visual experiences.</p>
+  </div>
+
+  <div class="feature">
+    <span class="number">02</span>
+    <h3>Selected Projects</h3>
+    <p>Exploring different styles, concepts and creative directions.</p>
+  </div>
+
+  <div class="feature">
+    <span class="number">03</span>
+    <h3>Attention to Detail</h3>
+    <p>Every element has a purpose. Every detail matters.</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 — PERSONAL PORTFOLIO
+</footer>
+
+</body>
+</html>
